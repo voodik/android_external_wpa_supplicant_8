@@ -24,6 +24,10 @@ L_CFLAGS += -DVERSION_STR_POSTFIX=\"-$(PLATFORM_VERSION)\"
 # Set Android log name
 L_CFLAGS += -DANDROID_LOG_NAME=\"hostapd\"
 
+ifeq ($(BOARD_NO_APSME_ATTR),true)
+L_CFLAGS += -DNO_APSME_ATTR
+endif
+
 # Disable unused parameter warnings
 L_CFLAGS += -Wno-unused-parameter
 
